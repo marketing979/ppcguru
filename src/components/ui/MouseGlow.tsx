@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { motion, useSpring } from 'framer-motion';
 
 export const MouseGlow: React.FC = () => {
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
 
     const springConfig = { damping: 30, stiffness: 200 };
     const x = useSpring(0, springConfig);
@@ -10,7 +10,7 @@ export const MouseGlow: React.FC = () => {
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            setMousePos({ x: e.clientX, y: e.clientY });
+
             x.set(e.clientX);
             y.set(e.clientY);
         };

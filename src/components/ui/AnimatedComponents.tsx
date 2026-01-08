@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, Variants } from 'framer-motion';
 import { gsap } from 'gsap';
 
 interface AnimatedButtonProps {
@@ -243,7 +243,7 @@ export const StaggeredList: React.FC<StaggeredListProps> = ({
     className = '',
     staggerDelay = 0.1,
 }) => {
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -253,7 +253,7 @@ export const StaggeredList: React.FC<StaggeredListProps> = ({
         },
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Search, Share2, TrendingUp, Globe, Palette, Star, MessageCircle } from 'lucide-react';
 import { AnimatedSection, AnimatedHeading, AnimatedBadge, MagneticCard, StaggeredList } from '../ui/AnimatedComponents';
 
@@ -49,7 +49,7 @@ const services = [
 ];
 
 export const Services: React.FC = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -59,7 +59,7 @@ export const Services: React.FC = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 50, rotateX: -10 },
     visible: {
       opacity: 1,

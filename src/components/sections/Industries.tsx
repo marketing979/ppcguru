@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Utensils, Plane, Home, ShieldCheck, Stethoscope, Wrench, Briefcase, ShoppingBag } from 'lucide-react';
 import { AnimatedSection, AnimatedHeading, AnimatedBadge } from '../ui/AnimatedComponents';
 
@@ -15,7 +15,7 @@ const industries = [
 ];
 
 export const Industries: React.FC = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -25,7 +25,7 @@ export const Industries: React.FC = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8, y: 30 },
     visible: {
       opacity: 1,

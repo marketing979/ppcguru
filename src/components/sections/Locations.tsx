@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 import { AnimatedSection, AnimatedHeading, AnimatedBadge } from '../ui/AnimatedComponents';
 
@@ -17,7 +17,7 @@ const locations = [
 ];
 
 export const Locations: React.FC = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -27,7 +27,7 @@ export const Locations: React.FC = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8, y: 20 },
     visible: {
       opacity: 1,

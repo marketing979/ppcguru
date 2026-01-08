@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValue, useSpring, Variants } from 'framer-motion';
 import { ArrowRight, Play, Users, Sparkles, TrendingUp, Target, ChevronDown } from 'lucide-react';
 import { AnimatedButton, AnimatedBadge, AnimatedCounter } from '../ui/AnimatedComponents';
 
@@ -33,7 +33,7 @@ export const Hero: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [mouseX, mouseY]);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
     },
   };
 
-  const floatingVariants = {
+  const floatingVariants: Variants = {
     animate: {
       y: [0, -15, 0],
       transition: {
@@ -119,8 +119,8 @@ export const Hero: React.FC = () => {
               left: `${10 + Math.random() * 80}%`,
               top: `${10 + Math.random() * 80}%`,
               background: `radial-gradient(circle, ${i % 3 === 0 ? 'rgba(232, 93, 4, 0.6)' :
-                  i % 3 === 1 ? 'rgba(249, 168, 37, 0.6)' :
-                    'rgba(230, 57, 70, 0.5)'
+                i % 3 === 1 ? 'rgba(249, 168, 37, 0.6)' :
+                  'rgba(230, 57, 70, 0.5)'
                 }, transparent 70%)`,
             }}
             animate={{

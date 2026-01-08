@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Target, TrendingUp, Users, Shield } from 'lucide-react';
 import { AnimatedSection, AnimatedHeading, MagneticCard, AnimatedCounter } from '../ui/AnimatedComponents';
 
@@ -39,7 +39,7 @@ const reasons = [
 ];
 
 export const WhyUs: React.FC = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -49,7 +49,7 @@ export const WhyUs: React.FC = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 60, scale: 0.9 },
     visible: {
       opacity: 1,
