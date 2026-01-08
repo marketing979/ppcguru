@@ -220,7 +220,7 @@ export const Hero: React.FC = () => {
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-8">
-              <AnimatedButton size="lg" href="#contact">
+              <AnimatedButton size="lg" href="/#contact">
                 <span>Book Free Strategy Call</span>
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
@@ -229,7 +229,7 @@ export const Hero: React.FC = () => {
                   <ArrowRight size={20} />
                 </motion.span>
               </AnimatedButton>
-              <AnimatedButton size="lg" variant="outline" href="#case-studies">
+              <AnimatedButton size="lg" variant="outline" href="/#case-studies">
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}

@@ -80,10 +80,10 @@ export const Navbar: React.FC = () => {
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.label}
-                href={link.href}
+                href={link.label === 'Services' ? '/services' : link.href} // Use href for simpler integration with existing animation logic, but point Services to /services
                 className={`relative font-medium transition-colors duration-200 ${activeSection === link.href.slice(1)
-                    ? 'text-primary-500'
-                    : 'text-dark-700 hover:text-primary-500'
+                  ? 'text-primary-500'
+                  : 'text-dark-700 hover:text-primary-500'
                   }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <AnimatedButton href="#contact" size="md">
+            <AnimatedButton href="/#contact" size="md">
               Book Strategy Call
             </AnimatedButton>
           </motion.div>
@@ -162,10 +162,10 @@ export const Navbar: React.FC = () => {
               {navLinks.map((link, index) => (
                 <motion.a
                   key={link.label}
-                  href={link.href}
+                  href={link.label === 'Services' ? '/services' : link.href}
                   className={`py-3 px-4 rounded-lg font-medium transition-colors ${activeSection === link.href.slice(1)
-                      ? 'bg-primary-50 text-primary-500'
-                      : 'text-dark-700 hover:bg-primary-50 hover:text-primary-500'
+                    ? 'bg-primary-50 text-primary-500'
+                    : 'text-dark-700 hover:bg-primary-50 hover:text-primary-500'
                     }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
@@ -182,7 +182,7 @@ export const Navbar: React.FC = () => {
                 transition={{ delay: 0.3 }}
                 className="mt-2"
               >
-                <AnimatedButton href="#contact" size="md" className="w-full">
+                <AnimatedButton href="/#contact" size="md" className="w-full">
                   Book Strategy Call
                 </AnimatedButton>
               </motion.div>
