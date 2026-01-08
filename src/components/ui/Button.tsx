@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'accent';
   size?: 'sm' | 'md' | 'lg';
   onClick?: () => void;
   className?: string;
@@ -20,9 +20,10 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = 'font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 inline-flex items-center justify-center gap-2';
 
   const variants = {
-    primary: 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:shadow-lg hover:shadow-blue-500/50',
-    secondary: 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:shadow-lg hover:shadow-emerald-500/50',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white',
+    primary: 'bg-gradient-to-r from-primary-500 to-secondary-400 text-white hover:shadow-glow-primary',
+    secondary: 'bg-gradient-to-r from-secondary-400 to-primary-500 text-white hover:shadow-glow-secondary',
+    accent: 'bg-gradient-to-r from-accent-500 to-primary-500 text-white hover:shadow-glow-accent',
+    outline: 'border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white',
   };
 
   const sizes = {

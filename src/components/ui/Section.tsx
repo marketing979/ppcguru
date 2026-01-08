@@ -3,7 +3,7 @@ import React from 'react';
 interface SectionProps {
   children: React.ReactNode;
   className?: string;
-  background?: 'white' | 'gray' | 'gradient';
+  background?: 'white' | 'gray' | 'gradient' | 'dark' | 'peach';
   id?: string;
 }
 
@@ -15,8 +15,10 @@ export const Section: React.FC<SectionProps> = ({
 }) => {
   const backgrounds = {
     white: 'bg-white',
-    gray: 'bg-gray-50',
-    gradient: 'bg-gradient-to-br from-blue-50 via-white to-cyan-50',
+    gray: 'bg-dark-50',
+    gradient: 'bg-gradient-to-br from-peach-50 via-white to-secondary-50',
+    dark: 'bg-dark-800 text-white',
+    peach: 'bg-peach-50',
   };
 
   return (

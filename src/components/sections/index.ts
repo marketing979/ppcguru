@@ -1,0 +1,12 @@
+export { Hero } from './Hero';
+export { Services } from './Services';
+export { WhyUs } from './WhyUs';
+export { CaseStudies } from './CaseStudies';
+export { Industries } from './Industries';
+export { Process } from './Process';
+export { HeroOffer } from './HeroOffer';
+export { Team } from './Team';
+export { Testimonials } from './Testimonials';
+export { Locations } from './Locations';
+export { Insights } from './Insights';
+export { CTA } from './CTA';

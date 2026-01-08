@@ -4,9 +4,15 @@ interface CardProps {
   children: React.ReactNode;
   className?: string;
   hover3d?: boolean;
+  variant?: 'default' | 'bordered' | 'gradient';
 }
 
-export const Card: React.FC<CardProps> = ({ children, className = '', hover3d = false }) => {
+export const Card: React.FC<CardProps> = ({
+  children,
+  className = '',
+  hover3d = false,
+  variant = 'default'
+}) => {
   const [rotate, setRotate] = React.useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -30,16 +36,21 @@ export const Card: React.FC<CardProps> = ({ children, className = '', hover3d = 
     setRotate({ x: 0, y: 0 });
   };
 
+  const variants = {
+    default: 'bg-white shadow-lg hover:shadow-xl',
+    bordered: 'bg-white border-2 border-primary-100 hover:border-primary-300 shadow-sm hover:shadow-lg',
+    gradient: 'bg-gradient-to-br from-white to-peach-50 shadow-lg hover:shadow-xl',
+  };
+
   return (
     <div
-      className={`bg-white rounded-xl shadow-lg transition-all duration-300 ${
-        hover3d ? 'transform-gpu' : 'hover:shadow-2xl hover:-translate-y-1'
-      } ${className}`}
+      className={`rounded-xl transition-all duration-300 ${hover3d ? 'transform-gpu' : 'hover:-translate-y-1'
+        } ${variants[variant]} ${className}`}
       style={
         hover3d
           ? {
-              transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-            }
+            transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
+          }
           : undefined
       }
       onMouseMove={handleMouseMove}
